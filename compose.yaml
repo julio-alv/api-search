@@ -1,0 +1,19 @@
+services:
+  mongo:
+    image: mongo:8.0.6
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
+
+  search:
+    container_name: search
+    image: getmeili/meilisearch:v1.14.0
+    environment:
+      - MEILI_MASTER_KEY=dfLPSmo0NcKOZnsjXODNFOvRrg9OlNnHnLWqsFNdgxM
+    ports:
+      - 7700:7700
+    expose:
+      - 7700
