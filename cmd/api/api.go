@@ -16,10 +16,7 @@ type API struct {
 }
 
 func NewAPI(m *mongo.Database, sm meilisearch.ServiceManager) *API {
-	return &API{
-		m:  m,
-		sm: sm,
-	}
+	return &API{m: m, sm: sm}
 }
 
 func (a *API) Start(address string) error {
